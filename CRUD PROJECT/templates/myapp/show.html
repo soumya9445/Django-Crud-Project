@@ -1,0 +1,65 @@
+{% extends 'common.html' %}
+
+{% load static %}
+{% block soumya %}
+
+      <table class="table table-striped table-dark">
+            <tr>
+                <th>Student Details</th>
+            </tr>
+            <tr>
+               <th>Student Idno</th>
+               <th>Student Name</th>
+               <th>Student Contact</th>
+               <th>Student Email</th>
+               <th>Student Course</th>
+               <th>Student Gender</th> 
+               <th>Student Image</th>
+               <th>Student Update</th>
+               <th>Student Delete</th> 
+               <th>Student Single Record</th>  
+                  
+            </tr> 
+            {% for x in object_list %} 
+              <tr>
+                  <th>{{x.no}}</th>
+                  <th>{{x.name}}</th>
+                  <th>{{x.contact}}</th>
+                  <th>{{x.email}}</th>
+                  <th>{{x.course }}</th>
+                  <th>{{x.gender}}</th> 
+                  <th>
+                        <img src="{{x.image.url}}" width=150px height=100px>
+                  </th>   
+                  <th><a href="{% url 'update' x.no %}">
+                         <img src="{% static 'imagess\update_icons.png' %}" width=100px height=100px>
+                  </a></th> 
+                     <th>
+                        <a href="{% url 'delete' x.no %}">
+                              <img src="{% static 'imagess\delete_icons.jpg' %}" width=100px height=100px>
+                        </a>
+                  </th> 
+                  <th>
+                        <a href="{% url 'single' x.no %}">
+                              <img src="{% static 'imagess\python logo.png' %}" width=100px height=100px>
+                        </a>
+                  </th>    
+               </tr> 
+             
+            </table>
+
+{% if messages %}
+
+{% for x in messages %}
+
+    <h1>{{x}}</h1>
+
+    
+{% endfor %} 
+
+
+
+
+
+            {% endif %}
+{% endblock %}

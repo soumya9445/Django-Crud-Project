@@ -1,0 +1,65 @@
+{% extends 'common.html' %}
+{% block soumya %}
+
+   
+   <table class="table table-striped table-dark">
+      <tr>
+          <th>
+              Student Details
+          </th>
+      </tr>
+           <tr>
+               <th>Student Idno</th>
+               <th>{{object.no}}</th>
+           </tr>
+           <tr>
+            <th>Student Name</th>
+            <th>{{object.name}}</th>
+           </tr>     
+           <tr>
+            <th>Student Contact</th>
+            <th>{{object.contact}}</th>
+           </tr> 
+           <tr>
+            <th>Student Email</th>
+            <th>{{object.email}}</th>
+            </tr>  
+            <tr>
+             <th>Student Course</th>
+             <th>{{object.course}}</th>
+             </tr> 
+             <tr>
+                <th>Student Gender</th>
+                <th>{{object.gender}}</th>
+              </tr>   
+              <tr>
+                  <th>Student Image</th>
+                  <th>
+                      <img src="{{object.image.url}}" width=100px height=100px>
+                  </th>
+              </tr>  
+           <tr>
+            <th colspan='2'>
+            <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <button type="submit">DELETE</button> 
+            </form>  
+      </th>
+      <th colspan='2'>  
+            <form action="{% url 'show' %}">
+                  {% csrf_token %}
+                  <button type='submit'>No</button>
+            </form>      
+      </th>
+</tr>  
+            
+      </table>
+     
+
+
+
+
+
+
+
+{% endblock %}

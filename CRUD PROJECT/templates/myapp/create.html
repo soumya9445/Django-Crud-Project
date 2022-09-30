@@ -1,0 +1,30 @@
+{% extends 'common.html' %}
+{% block soumya %} 
+{% load static %}
+     <form method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      <table class="table table-striped table-dark">
+      <tr><th colspan='2' style="align:center;
+            font-size:40px;
+            color:black;
+            background-color:aqua;
+            ">
+            Student Registration Page
+      </th></tr>
+      <tr><th>{{form}}</th></tr>
+      <tr><th colspan='2' style='align:center'><button type='submit'>Register</button></th></tr>
+
+</table>
+</form>  
+
+   {% for x in messages %}
+           <h1>{{x}}</h1>
+
+   {% endfor %}
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'common.html' %}
+
+{% block soumya %}
+      <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+      <table class="table table-striped table-dark">
+        <tr>
+            <th>Update Employee Record</th>
+        </tr>
+             {{ form }}    
+
+        <tr>
+            <th>
+                 <button type='submit'>UPDATE</button>
+            </th>
+      </tr>    
+</table>
+</form>          
+
+{% endblock %}
